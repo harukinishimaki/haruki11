@@ -3,7 +3,6 @@
         <div class="card">
             <p class="title">ログイン</p>
             <div class="form">
-                <input placeholder="ユーザーネーム" type="text" v-model="name" />
                 <input placeholder="メールアドレス" type="email" v-model="email" />
                 <input placeholder="パスワード" type="password" v-model="password" />
                 <button @click="signIn">ログイン</button>
@@ -32,10 +31,10 @@ export default {
                 .signInWithEmailAndPassword(this.email,this.password)
                 .then(data => {
                     if (data.user.emailVerified) {
-                        this.$store.dispatch("changeUserData", {
+                        this.$store.dispatch("changeUserAction", {
                             user: data.user
                         });
-                        this.$route.replace("/");
+                        this.$router.replace("/");
                     }
                 });
         }

@@ -34,7 +34,7 @@ export default {
                     data.user.updateProfile({
                         displayName: this.name
                     });
-    data.user.sendEmailVerification().then(() => {
+    data.user.sendEmailVerification() .then(() => {
                 this.$router.replace("/signin");
                     });
                 });
