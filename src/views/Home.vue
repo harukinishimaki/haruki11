@@ -123,7 +123,6 @@
 
 <script>
 import firebase from "firebase";
-import func from '../../vue-temp/vue-editor-bridge';
 export default {
   data() {
     return {
